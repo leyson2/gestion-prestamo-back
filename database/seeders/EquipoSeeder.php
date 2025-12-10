@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class EquipoSeeder extends Seeder
 {
@@ -29,7 +30,7 @@ class EquipoSeeder extends Seeder
         ];
 
         foreach ($equipos as $equipo) {
-            \DB::table('equipos')->insert($equipo);
+            DB::table('equipos')->insert($equipo);
         }
     }
 }
