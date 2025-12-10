@@ -35,6 +35,7 @@ class PrestamoRepository implements PrestamoInterface
             'estado' => $data['estado'],
             'fecha_prestamo' => Carbon::parse($data['fecha_prestamo'])->format('Y-m-d'),
             'comentario_final' => $data['comentario'] ?? null,
+            'created_at' => Carbon::now(),
         ]);
     }
 
@@ -70,7 +71,15 @@ class PrestamoRepository implements PrestamoInterface
     {
         return DB::table('prestamos')
             ->where('id', $id)
-            ->update($data);
+            ->update([
+                'equipo_id' => $data['equipo_id'],
+                'nombre_solicitante' => $data['nombre_solicitante'],
+                'correo' => $data['correo'],
+                'estado' => $data['estado'],
+                'fecha_prestamo' => $data['fecha_prestamo'],
+                'comentario_final' => $data['comentario_final'],
+                'updated_at' => Carbon::now(),
+            ]);
     }
 
     public function destroy($id)
