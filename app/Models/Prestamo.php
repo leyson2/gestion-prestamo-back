@@ -14,6 +14,7 @@ class Prestamo extends Model
     protected $fillable = [
         'equipo_id',
         'nombre_solicitante',
+        'dni_solicitante',
         'correo',
         'estado',
         'fecha_prestamo',

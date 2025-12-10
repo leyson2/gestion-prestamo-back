@@ -86,6 +86,7 @@ class PrestamoService
         $mappedData = [
             'equipo_id' => $data['equipoCode'],
             'nombre_solicitante' => $data['solicitante'],
+            'dni_solicitante' => $data['dniSolicitante'],
             'correo' => $data['correo'],
             'estado' => $data['estado'],
             'fecha_prestamo' => Carbon::parse($data['fecha_prestamo'])->format('Y-m-d'),

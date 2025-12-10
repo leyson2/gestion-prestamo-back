@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('equipo_id')->constrained('equipos');
             $table->string('nombre_solicitante', 100);
+            $table->string('dni_solicitante', 20);
             $table->string('correo');
             $table->enum('estado', ['SOLICITADO', 'ENTREGADO','DEVUELTO'])->default('SOLICITADO');
             $table->date('fecha_prestamo');

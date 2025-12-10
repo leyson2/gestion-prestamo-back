@@ -18,6 +18,7 @@ class PrestamoRepository implements PrestamoInterface
                 'eq.nombre as equipo',
                 'eq.id as equipoCode',
                 'nombre_solicitante as solicitante',
+                'p.dni_solicitante as dniSolicitante',
                 'p.estado as estado',
                 'p.fecha_prestamo',
                 'p.comentario_final as comentario'
@@ -31,6 +32,7 @@ class PrestamoRepository implements PrestamoInterface
         return DB::table('prestamos')->insert([
             'equipo_id' => $data['equipoCode'],
             'nombre_solicitante' => $data['solicitante'],
+            'dni_solicitante' => $data['dniSolicitante'],
             'correo' => $data['correo'],
             'estado' => $data['estado'],
             'fecha_prestamo' => Carbon::parse($data['fecha_prestamo'])->format('Y-m-d'),
@@ -48,6 +50,7 @@ class PrestamoRepository implements PrestamoInterface
                 'eq.nombre as equipo',
                 'eq.id as equipoCode',
                 'nombre_solicitante as solicitante',
+                'p.dni_solicitante as dniSolicitante',
                 'p.estado as estado',
                 'p.fecha_prestamo',
                 'p.comentario_final as comentario'
@@ -74,6 +77,7 @@ class PrestamoRepository implements PrestamoInterface
             ->update([
                 'equipo_id' => $data['equipo_id'],
                 'nombre_solicitante' => $data['nombre_solicitante'],
+                'dni_solicitante' => $data['dni_solicitante'],
                 'correo' => $data['correo'],
                 'estado' => $data['estado'],
                 'fecha_prestamo' => $data['fecha_prestamo'],

@@ -28,6 +28,7 @@ class PrestamoController extends Controller
         $validate = Validator::make($request->all(), [
             'equipoCode' => 'required|exists:equipos,id',
             'solicitante' => 'required|string|max:255',
+            'dniSolicitante' => 'required|max:20',
             'correo' => 'required|email|max:255',
             'estado' => 'required|in:SOLICITADO,ENTREGADO,DEVUELTO',
             'fecha_prestamo' => 'required|date',
